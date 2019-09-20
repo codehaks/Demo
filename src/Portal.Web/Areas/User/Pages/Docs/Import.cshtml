@@ -1,0 +1,10 @@
+﻿@page
+@model Portal.Web.Areas.User.Pages.Docs.ImportModel
+@{
+}
+
+
+    <form method="post" class="p-3" enctype="multipart/form-data">
+        <input type="file" asp-for="ImportedDoc" />
+        <button class="btn btn-primary">Import</button>
+    </form>
