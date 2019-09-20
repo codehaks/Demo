@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29311.281
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal.Web", "src\Portal.Web\Portal.Web.csproj", "{817E313A-B49C-43E6-B644-1A8BBD45B0FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal", "src\Portal\Portal.csproj", "{DC4EC8C9-CC41-4ED1-BB0F-090337C13295}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{817E313A-B49C-43E6-B644-1A8BBD45B0FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817E313A-B49C-43E6-B644-1A8BBD45B0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817E313A-B49C-43E6-B644-1A8BBD45B0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817E313A-B49C-43E6-B644-1A8BBD45B0FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC4EC8C9-CC41-4ED1-BB0F-090337C13295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4EC8C9-CC41-4ED1-BB0F-090337C13295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4EC8C9-CC41-4ED1-BB0F-090337C13295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4EC8C9-CC41-4ED1-BB0F-090337C13295}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B92BA30A-B48C-4D5B-AC45-B58ABBCB78EE}
+	EndGlobalSection
+EndGlobal
