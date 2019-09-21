@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Portal.Application.Cities.Commands;
 using Portal.Identity;
 using Portal.Persistance;
 
@@ -40,8 +43,10 @@ namespace Portal.Web
 
             services.AddRazorPages();
             services.AddControllers();
+            services.AddMediatR(typeof(AddCityListCommand).GetTypeInfo().Assembly);
+
             //services.AddSignalR();
-            //services.AddAutoMapper(typeof(Application.Playing.HandMapper).GetTypeInfo().Assembly);
+            //services.AddAutoMapper();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

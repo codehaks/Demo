@@ -7,6 +7,6 @@ namespace Portal.Application.Cities.Commands
 {
     public class AddCityListCommand : IRequest<int>
     {
-        public IList<string> CityNames { get; set; }
+        public IEnumerable<string> CityNames { get; set; }
     }
 }

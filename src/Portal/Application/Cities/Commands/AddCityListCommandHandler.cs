@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Portal.Domain.Entities;
 using Portal.Persistance;
 using System;
 using System.Collections.Generic;
@@ -12,17 +13,22 @@ namespace Portal.Application.Cities.Commands
     public class AddCityListCommandHandler : IRequestHandler<AddCityListCommand, int>
     {
         private readonly PortalDbContext _db;
-        private readonly IMapper _mapper;
+        //private readonly IMapper _mapper;
 
-        public AddCityListCommandHandler(PortalDbContext db, IMapper mapper)
+        public AddCityListCommandHandler(PortalDbContext db)
         {
             _db = db;
-            _mapper = mapper;
         }
 
         public async Task<int> Handle(AddCityListCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            foreach (var name in request.CityNames)
+            {
+                _db.Cities.Add(new City { Name = name });
+            }
+
+            await _db.SaveChangesAsync();
+            return 1;
         }
     }
 }

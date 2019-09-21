@@ -4,16 +4,23 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OfficeOpenXml;
+using Portal.Application.Cities.Commands;
 using Portal.Infrastrcuture;
 
 namespace Portal.Web.Areas.User.Pages.Docs
 {
     public class ImportModel : PageModel
     {
+        private readonly IMediator _mediator;
+        public ImportModel(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
         public void OnGet()
         {
         }
@@ -40,6 +47,8 @@ namespace Portal.Web.Areas.User.Pages.Docs
             using var excelImportService = new ExcelImportService(stream);
 
             var cities = excelImportService.GetCityNames();
+
+            await _mediator.Send(new AddCityListCommand { CityNames = cities });
 
             return Page();
 
