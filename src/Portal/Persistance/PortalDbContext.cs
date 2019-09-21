@@ -14,6 +14,7 @@ namespace Portal.Persistance
 
         public DbSet<City> Cities { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Product> Products { get; set; }
 
 
         public override int SaveChanges()

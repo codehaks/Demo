@@ -28,8 +28,8 @@ namespace Portal.Web
         {
             services.AddDbContext<PortalDbContext>(options =>
             {
-                //options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
-                options.UseSqlite("Data Source=portal.sqlite");
+                options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
+                //options.UseSqlite("Data Source=portal.sqlite");
                 options.EnableDetailedErrors();
                 options.EnableSensitiveDataLogging();
             });
@@ -60,7 +60,7 @@ namespace Portal.Web
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();                
+                endpoints.MapRazorPages();
                 endpoints.MapControllers();
             });
         }
