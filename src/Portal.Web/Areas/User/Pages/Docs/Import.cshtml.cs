@@ -35,12 +35,12 @@ namespace Portal.Web.Areas.User.Pages.Docs
 
             //var list = new List<UserInfo>();
 
-            using (var stream = new MemoryStream())
-            {
-                await ImportedDoc.CopyToAsync(stream, cancellationToken);
+            using var stream = new MemoryStream();
+            await ImportedDoc.CopyToAsync(stream, cancellationToken);
+            using var excelImportService = new ExcelImportService(stream);
 
-                var data = new ExcelImportService().ExtractData(stream);
-            }
+            var cities = excelImportService.GetCityNames();
+
         }
     }
 }

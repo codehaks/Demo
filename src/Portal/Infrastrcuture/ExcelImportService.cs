@@ -45,21 +45,27 @@ namespace Portal.Infrastrcuture
         #endregion
 
 
-        public IList<string> GetCitieNames()
+        public IEnumerable<string> GetCityNames()
         {
-
-            var result = new List<string>();
 
             ExcelWorksheet worksheet = Package.Workbook.Worksheets[0];
             var rowCount = worksheet.Dimension.Rows;
 
             for (int row = 2; row <= rowCount; row++)
             {
-                result.Add(worksheet.Cells[row, 1].Value.ToString().Trim()
-                );
+                var cellValue = worksheet.Cells[row, 1].Value;
+                if (cellValue != null)
+                {
+                    var cityText = worksheet.Cells[row, 1].Value.ToString();
+                    if (!(string.IsNullOrEmpty(cityText)))
+                    {
+                        var cityName = worksheet.Cells[row, 1].Value.ToString().Trim();
+                        yield return cityName;
+                    }
+                }
             }
 
-            return result;
+
         }
 
 

@@ -9,13 +9,13 @@ namespace Portal.Test
     {
         [Fact]
         public void ReturnCityNames()
-        {
-            var excelService = new ExcelImportService();
+        {           
             using (var stream=new FileStream(@"d:\car-sales-01.xlsx",FileMode.Open))
             {
-                var result=excelService.ExtractData(stream);
+                var excelService = new ExcelImportService(stream);
+                var cities = excelService.GetCityNames();
 
-                Assert.True(result.Cities.Count > 0);
+                Assert.True(cities.Count > 0);
             }
         }
     }
