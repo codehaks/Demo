@@ -41,6 +41,8 @@ namespace Portal.Web.Areas.User.Pages.Docs
 
             var cities = excelImportService.GetCityNames();
 
+            return Page();
+
         }
     }
 }

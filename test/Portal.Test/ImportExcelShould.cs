@@ -1,6 +1,7 @@
 using Portal.Infrastrcuture;
 using System;
 using System.IO;
+using System.Linq;
 using Xunit;
 
 namespace Portal.Test
@@ -15,7 +16,7 @@ namespace Portal.Test
                 var excelService = new ExcelImportService(stream);
                 var cities = excelService.GetCityNames();
 
-                Assert.True(cities.Count > 0);
+                Assert.True(cities.Count() > 0);
             }
         }
     }

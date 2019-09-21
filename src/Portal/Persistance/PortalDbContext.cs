@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Portal.Domain.Entities;
 using Portal.Identity;
 
 namespace Portal.Persistance
@@ -11,7 +12,9 @@ namespace Portal.Persistance
         {
         }
 
-       
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
 
         public override int SaveChanges()
         {
