@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal.Web", "src\Portal.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal", "src\Portal\Portal.csproj", "{DC4EC8C9-CC41-4ED1-BB0F-090337C13295}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0EB061E2-3439-4461-BA12-AAA947DEC0FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DB73C1D9-1B6A-4B63-B5EF-F7BEF8720102}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal.Test", "test\Portal.Test\Portal.Test.csproj", "{4A8B95CA-E8A9-44C1-AE6E-40F1CEC813BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +27,18 @@ Global
 		{DC4EC8C9-CC41-4ED1-BB0F-090337C13295}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC4EC8C9-CC41-4ED1-BB0F-090337C13295}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC4EC8C9-CC41-4ED1-BB0F-090337C13295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A8B95CA-E8A9-44C1-AE6E-40F1CEC813BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A8B95CA-E8A9-44C1-AE6E-40F1CEC813BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A8B95CA-E8A9-44C1-AE6E-40F1CEC813BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A8B95CA-E8A9-44C1-AE6E-40F1CEC813BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{817E313A-B49C-43E6-B644-1A8BBD45B0FC} = {0EB061E2-3439-4461-BA12-AAA947DEC0FD}
+		{DC4EC8C9-CC41-4ED1-BB0F-090337C13295} = {0EB061E2-3439-4461-BA12-AAA947DEC0FD}
+		{4A8B95CA-E8A9-44C1-AE6E-40F1CEC813BB} = {DB73C1D9-1B6A-4B63-B5EF-F7BEF8720102}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B92BA30A-B48C-4D5B-AC45-B58ABBCB78EE}
