@@ -4,6 +4,7 @@ using Portal.Domain.Entities;
 using Portal.Persistance;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,9 +23,15 @@ namespace Portal.Application.Cities.Commands
 
         public async Task<int> Handle(AddCityListCommand request, CancellationToken cancellationToken)
         {
+            var allCities = _db.Cities.ToList();
+
             foreach (var name in request.CityNames)
             {
-                _db.Cities.Add(new City { Name = name });
+                if (!allCities.Any(c=>c.Name==name))
+                {
+                    _db.Cities.Add(new City { Name = name });
+                }
+                
             }
 
             await _db.SaveChangesAsync();
