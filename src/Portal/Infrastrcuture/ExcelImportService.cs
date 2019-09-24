@@ -1,4 +1,5 @@
 ﻿using OfficeOpenXml;
+using Portal.Application.Orders.Commands;
 using Portal.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,14 +9,14 @@ using System.Text;
 namespace Portal.Infrastrcuture
 {
 
-    public class OrderData
-    {
-        public string CityName { get; set; }
-        public string CustomerName { get; set; }
-        public string ProductName { get; set; }
-        public int ProductId { get; set; }
-        public int Price { get; set; }
-    }
+    //public class OrderData
+    //{
+    //    public string CityName { get; set; }
+    //    public string CustomerName { get; set; }
+    //    public string ProductName { get; set; }
+    //    public int ProductId { get; set; }
+    //    public int Price { get; set; }
+    //}
 
     public class ExcelImportService : IDisposable
     {
@@ -70,14 +71,14 @@ namespace Portal.Infrastrcuture
             }
         }
 
-        public IEnumerable<OrderData> GetOrders()
+        public IEnumerable<OrderRawInfo> GetOrders()
         {
             ExcelWorksheet worksheet = Package.Workbook.Worksheets[0];
             var rowCount = worksheet.Dimension.Rows;
 
             for (int row = 2; row <= rowCount; row++)
             {
-                var order = new OrderData();
+                var order = new OrderRawInfo();
 
                 var cityNameValue = worksheet.Cells[row, 1].Value;
                 if (cityNameValue != null)

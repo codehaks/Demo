@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OfficeOpenXml;
 using Portal.Application.Cities.Commands;
+using Portal.Application.Orders.Commands;
 using Portal.Infrastrcuture;
 
 namespace Portal.Web.Areas.User.Pages.Docs
@@ -49,6 +50,10 @@ namespace Portal.Web.Areas.User.Pages.Docs
             var cities = excelImportService.GetCityNames();
 
             await _mediator.Send(new AddCityListCommand { CityNames = cities });
+            await _mediator.Send(new AddOrderRangeCommand
+            {
+                Orders = excelImportService.GetOrders()
+            });
 
             return Page();
 

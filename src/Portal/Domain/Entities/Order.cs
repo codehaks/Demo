@@ -8,7 +8,9 @@ namespace Portal.Domain.Entities
     {
         public int Id { get; set; }
         public int CityId { get; set; }
-        public int CustomerName { get; set; }
+        public int ProductId { get; set; }
+
+        public string CustomerName { get; set; }
 
         public Product Product { get; set; }
         public City City { get; set; }
